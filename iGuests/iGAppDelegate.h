@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iGStartPageViewController.h"
+#import "iGGraphs.h"
+#import "iGSettings.h"
+#import "iGHelp.h"
+#import "iGEditDay.h"
 
 @interface iGAppDelegate : UIResponder <UIApplicationDelegate>
 

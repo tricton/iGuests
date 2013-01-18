@@ -13,7 +13,50 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    iGEditDay *editPage = [[iGEditDay alloc] init];
+    iGStartPageViewController *mainPage = [[iGStartPageViewController alloc] init];
+    iGGraphs *graphsPage = [[iGGraphs alloc] init];
+    iGSettings *settingsPage = [[iGSettings alloc] init];
+    iGHelp *helpPage = [[iGHelp alloc] init];
+    
+    UITabBarController *mainTabBar = [[UITabBarController alloc] init];
+    UITabBar *tabBar = [UITabBar appearance];
+    
+    [tabBar setBackgroundImage:[UIImage imageNamed:@"tabBarBackground"]];
+    [tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"selectedBackground"]];
+    
+    NSArray *pagesOfControllers = [NSArray arrayWithObjects:editPage, mainPage, graphsPage, settingsPage, helpPage, nil];
+
+    [mainTabBar setViewControllers:pagesOfControllers];
+    [mainTabBar setSelectedViewController:mainPage];    
+    
+    [self.window setRootViewController:mainTabBar];
+    
+    NSArray *selectedImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"editPictogramm30x30"],
+                                                        [UIImage imageNamed:@"calendarPage30x30"],
+                                                        [UIImage imageNamed:@"graph30x30"],
+                                                        [UIImage imageNamed:@"settings30x30"],
+                                                        [UIImage imageNamed:@"help30x30"],nil];
+    NSArray *unselectedImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"editPictogramm-unselected30x30"],
+                                                          [UIImage imageNamed:@"calendarPage-unselected30x30"],
+                                                          [UIImage imageNamed:@"graph30x30-unsel"],
+                                                          [UIImage imageNamed:@"settings30x30-unsel"],
+                                                          [UIImage imageNamed:@"help30x30-unsel"],nil];
+    
+    NSArray *items = mainTabBar.tabBar.items;
+    
+    for (int i = 0; i < items.count; i++){
+        UITabBarItem *tabBarItem = [items objectAtIndex:i];
+        
+        UIImage *editPageImageSelected = [selectedImages objectAtIndex:i];
+        UIImage *editPageImageUnselected = [unselectedImages objectAtIndex:i];
+        
+        [tabBarItem setFinishedSelectedImage:editPageImageSelected
+                 withFinishedUnselectedImage:editPageImageUnselected];
+    }
+        
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
