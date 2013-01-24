@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iGNoteCell : UITableViewCell{
+@interface iGNoteCell : UITableViewCell <UITextViewDelegate>{
     UILabel *cellLabel;
     UITextView *cellTextView;
 }

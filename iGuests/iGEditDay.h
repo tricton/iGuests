@@ -21,6 +21,15 @@
     iGSmileCell *smileCell;
     iGNoteCell *noteCell;
     UITableView *editTableView;
-   }
+    UILabel *topLabel;
+    NSTimeInterval dateInTimeInterval;
+    UISwitch *isSex;
+    UISwitch *isTablets;
+    UISwitch *isSport;
+    UISwitch *isOvulation;
+    UISwitch *isMenstruation;
+    UITextField *weightField;
+    UITextField *temperatureField;
+}
 
 @end

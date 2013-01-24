@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "iGDayTile.h"
-#import "iGEditDay.h"
 
 @interface iGStartPageViewController : UIViewController <UIGestureRecognizerDelegate>{
     NSMutableArray *dayButtons;
@@ -17,6 +15,6 @@
     NSCalendar *mainCalendar;
     NSDate *currentShowingDate;
     UILabel *topDate;
-    
 }
+
 @end

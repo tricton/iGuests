@@ -7,6 +7,7 @@
 //
 
 #import "iGSymptoms.h"
+//#import "MainBase.h"
 
 @interface iGSymptoms ()
 
@@ -46,7 +47,7 @@
                forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:returnButton];
         
-        symptomsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, tableFrame.origin.y + 50, 320, tableFrame.size.height - 50)
+        symptomsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, tableFrame.origin.y + 50, 320, tableFrame.size.height - 70)
                                                          style:UITableViewStylePlain];
         [self.view addSubview:symptomsTableView];
         [symptomsTableView setDelegate:self];

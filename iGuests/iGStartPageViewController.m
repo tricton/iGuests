@@ -7,6 +7,7 @@
 //
 
 #import "iGStartPageViewController.h"
+#import "iGSelectedDate.h"
 
 @interface iGStartPageViewController ()
 
@@ -85,7 +86,6 @@
         topDate = [[UILabel alloc] initWithFrame:CGRectMake(75, 10, 170, 40)];
         [topDate setBackgroundColor:[UIColor clearColor]];
         [topDate setFont:[UIFont boldSystemFontOfSize:20]];
-        //[topDate setTextColor:[UIColor whiteColor]];
         [topDate setTextAlignment:NSTextAlignmentCenter];
         [self.view addSubview:topDate];
     }else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
@@ -135,9 +135,10 @@
     [super viewDidLoad];
     
 	mainCalendar = [NSCalendar currentCalendar];
-    [mainCalendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [mainCalendar setTimeZone:[NSTimeZone localTimeZone]];
     NSDate *today = [NSDate date];
     currentShowingDate = today;
+    iGSelectedDate.sharedDate.selectedDate = today;
     [self createDatesForVisibleCalendarWithPresentData:today];
     UISwipeGestureRecognizer *swipeToLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector(showNextMonth)];
@@ -215,15 +216,16 @@
     NSDateComponents *compsToCalculateSelectedDate = [mainCalendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
                                                                      fromDate:currentShowingDate];
     [compsToCalculateSelectedDate setDay:(buttonPressed - (weekDay - 1))];
-    NSDate *selectedDate = [mainCalendar dateFromComponents:compsToCalculateSelectedDate];
+    [iGSelectedDate sharedDate].selectedDate = [mainCalendar dateFromComponents:compsToCalculateSelectedDate];
+    NSDate *SELECTED_DATE = [iGSelectedDate sharedDate].selectedDate;
     if (buttonPressed >= weekDay && buttonPressed <= numberOfMaxDay){
-        NSLog(@"%@", selectedDate);
+        NSLog(@"%@", SELECTED_DATE);
     }else if (buttonPressed < weekDay){
         [self showPreviousMonth];
-        NSLog(@"%@", selectedDate);
+        NSLog(@"%@", SELECTED_DATE);
     }else if (buttonPressed > numberOfMaxDay){
         [self showNextMonth];
-        NSLog(@"%@", selectedDate);
+        NSLog(@"%@", SELECTED_DATE);
     }
     return buttonPressed;
 }

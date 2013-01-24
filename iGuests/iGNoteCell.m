@@ -22,6 +22,7 @@
         [cellLabel setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:0.3]];
         [cellLabel setTextAlignment:NSTextAlignmentCenter];
         cellTextView = [[UITextView alloc] initWithFrame:CGRectMake(mainFrame.origin.x, mainFrame.origin.y + 20, mainFrame.size.width, 80)];
+        [cellTextView setReturnKeyType:UIReturnKeyDone];
 
         [self.contentView addSubview:cellLabel];
         [self.contentView addSubview:cellTextView];

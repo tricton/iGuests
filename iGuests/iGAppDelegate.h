@@ -13,7 +13,9 @@
 #import "iGHelp.h"
 #import "iGEditDay.h"
 
-@interface iGAppDelegate : UIResponder <UIApplicationDelegate>
+@interface iGAppDelegate : UIResponder <UIApplicationDelegate>{
+
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

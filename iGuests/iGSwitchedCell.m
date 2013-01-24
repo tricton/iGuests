@@ -23,7 +23,6 @@
         [cellLabel setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:0.3]];
         cellPictogramm = [[UIImageView alloc] initWithFrame:CGRectMake(mainFrame.origin.x + 2, mainFrame.origin.y + 2, mainFrame.size.height - 4, mainFrame.size.height - 4)];
         cellSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(mainFrame.origin.x + 240, mainFrame.origin.y + 7, 60, 38)];
-        //[cellSwitch setOn:NO];
         [self.contentView addSubview:cellSwitch];
         [self.contentView addSubview:cellPictogramm];
         [self.contentView addSubview:cellLabel];

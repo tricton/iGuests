@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MainBase" representedClassName="MainBase" syncable="YES">
+        <attribute name="abdominaldistention" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="acne" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="appetite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="constipation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="diarrhea" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="filling" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="highpressure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="increasebreast" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lowpressure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ovulation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="paininalvus" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="paininbreast" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="paininhead" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="paininlumbus" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="period" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pullinsour" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pullsindesert" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pullsinsalt" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sport" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sweling" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tablets" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vertigo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MainBase" positionX="160" positionY="192" width="128" height="450"/>
+    </elements>
+</model>
